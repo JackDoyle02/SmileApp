@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7ba53a1f278367b629f6891369f2b59c",
+    "entities": [
+      {
+        "tableName": "mood_entry",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`date` TEXT NOT NULL, `mood_rating` INTEGER NOT NULL, `sleep_quality` INTEGER NOT NULL, `positives` TEXT NOT NULL, `negatives` TEXT NOT NULL, `additional_details` TEXT NOT NULL, PRIMARY KEY(`date`))",
+        "fields": [
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "moodRating",
+            "columnName": "mood_rating",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sleepQuality",
+            "columnName": "sleep_quality",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "positives",
+            "columnName": "positives",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "negatives",
+            "columnName": "negatives",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalDetails",
+            "columnName": "additional_details",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "date"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7ba53a1f278367b629f6891369f2b59c')"
+    ]
+  }
+}
